@@ -1,0 +1,25 @@
+public class Box implements ToBeStored{
+    private double maxWeight;
+    private double currentWeight;
+    private int numberOfThings;
+
+    public Box(double maxWeight) {
+        this.maxWeight = maxWeight;
+        this.currentWeight = 0;
+        this.numberOfThings = 0;
+    }
+    @Override
+    public double weight(){
+        return this.maxWeight;
+    }
+    public void add(ToBeStored Object){
+        if(this.currentWeight+Object.weight() <= this.maxWeight){
+            this.numberOfThings++;
+            this.currentWeight += Object.weight();
+        }
+
+    }
+    public String toString(){
+        return "Box:"
+    }
+}
